@@ -1,0 +1,14 @@
+Description: Empty tensorflow python 3 chart
+Engine: gotpl
+Home: http://kuberlab.com
+Icon: https://storage.googleapis.com/kuberlab/static/favicon.ico
+Keywords:
+- kubernetes
+- tensorflow
+- hello
+Maintainers:
+- Email: agunin@kuberlab.com
+  Name: Gunin Alexander
+Name: tensorflow-py3
+Version: 1.0.0
+Type: mlapp

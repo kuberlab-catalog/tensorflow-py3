@@ -1,0 +1,45 @@
+Args: --data_dir=/workspace/data --log_dir=$RUNDIR
+Cmd: hello.py
+EnvVars: []
+ExecutionDir: /src/tensorflow-py3
+Images:
+  BaseImage: tensorflow/tensorflow:latest-py3
+  GpuImage: tensorflow/tensorflow:latest-gpu-py3
+  PSImage: tensorflow/tensorflow:latest-py3
+Jupyter:
+  UseGPU: true
+MonitoringNamespace: kuberlab
+Requests:
+  CPU: 100m
+  CPULimit: 8000m
+  GPU: 1
+  Memory: 2Gi
+  MemoryLimit: 64Gi
+  PsPods: 0
+  WorkerPods: 0
+Volumes:
+- isLibDir: false
+  isTrainLogDir: true
+  mountPath: /training
+  name: training
+  clusterStorage: {{ .storage }}
+  subPath: training
+- gitRepo:
+    repository: https://github.com/kuberlab-catalog/tensorflow-py3
+  isLibDir: false
+  isTrainLogDir: false
+  mountPath: /src
+  name: src
+  subPath: ""
+- isLibDir: true
+  isTrainLogDir: false
+  mountPath: /workspace/lib
+  name: lib
+  clusterStorage: {{ .storage }}
+  subPath: lib
+- isLibDir: false
+  isTrainLogDir: false
+  mountPath: /workspace/data
+  name: data
+  clusterStorage: {{ .storage }}
+  subPath: /mnist-data
