@@ -8,7 +8,7 @@ Images:
   PSImage: tensorflow/tensorflow:latest-py3
 Jupyter:
   UseGPU: true
-  kuberlab/mlboard-jupyter-gpu:latest-py3
+  Image: kuberlab/mlboard-jupyter-gpu:latest-py3
 MonitoringNamespace: kuberlab
 Requests:
   CPU: 100m
