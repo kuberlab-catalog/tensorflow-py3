@@ -19,7 +19,7 @@ Requests:
   CPULimit: 8000m
   GPU: 0
   Memory: 128Mi
-  MemoryLimit: 64Gi
+  MemoryLimit: 8Gi
   PsPods: 0
   WorkerPods: 0
 Volumes:
