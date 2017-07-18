@@ -7,14 +7,18 @@ Images:
   GpuImage: tensorflow/tensorflow:latest-gpu-py3
   PSImage: tensorflow/tensorflow:latest-py3
 Jupyter:
-  UseGPU: true
   Image: kuberlab/mlboard-jupyter-gpu:latest-py3
+  UseGPU: false
+  CPU: 100m
+  CPULimit: 8000m
+  Memory: 128Mi
+  MemoryLimit: 4Gi
 MonitoringNamespace: kuberlab
 Requests:
   CPU: 100m
   CPULimit: 8000m
-  GPU: 1
-  Memory: 2Gi
+  GPU: 0
+  Memory: 128Mi
   MemoryLimit: 64Gi
   PsPods: 0
   WorkerPods: 0
@@ -43,4 +47,4 @@ Volumes:
   mountPath: /workspace/data
   name: data
   clusterStorage: {{ .storage }}
-  subPath: /mnist-data
+  subPath: data
